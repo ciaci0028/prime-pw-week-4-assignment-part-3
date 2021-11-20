@@ -17,38 +17,38 @@ console.log (`Empty basket:`, basket) ;
  }
 
  // Testing function by adding 'Socks' to the basket
- console.log( addItem( 'Socks' ) );
- console.log( basket );
+ console.log( `Adding socks to basket, expect true:`, addItem( 'Socks' ) );
+ console.log( `Expect basket to contain Socks:`, basket );
 
  // Testing function by adding 'Pants' and 'Shirt' to the basket
  addItem( 'Pants' );
  addItem( 'Shirt' );
- console.log ( basket );
+ console.log ( `Expect basket to contain Socks, Pants, Shirt:`, basket );
 
 // - Create a function called `listItems`. It should:
  //  - loop over the items in the `basket` array
  //  - console.log each individual item on a new line
- function listItems(array){
+ function listItems( array ){
      for ( item of array ){
          console.log ( item );
      }
  }
 
  // Testing listItems function on basket array
+console.log (`Expect an individual list of items below:`) 
 listItems( basket );
 
 // - Create a function called `empty`. It should:
   // - reset the `basket` to an empty array
+  function empty( array ) {
+      while ( array.length > 0 ){
+          array.pop () ;
+      }
+  }
 
-// > __IMPORTANT__
-// > Make sure that you are writing code *in the file* to test every function that you write!
-
-// For example, to test `addItem`:
-// ```
-// console.log(`Basket is ${basket}`);
-// console.log('Adding apples (expect true)', addItem('apples'));
-// console.log(`Basket is now ${basket}`);
-// ```
+  // Testing empty function
+  empty( basket );
+  console.log ( `Expect an empty basket: ${basket}`);
 
 // ### Stretch Goals 
 // Remember that Stretch Goals are not required, but will help you to further develop concepts from the skills we have covered.
