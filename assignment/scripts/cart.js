@@ -56,15 +56,38 @@ listItems( basket );
 // __Using functions in other functions!__
 
 // 1. Add a global `const` named `maxItems` and set it to 5.
+const maxItems = 5;
 
 // 2. Create a function called isFull(). It should:
   // - return `false` if the basket contains *less* than max number of items
   // - return `true` otherwise (equal or more than maxItems)
+  function isFull() {
+      if ( basket.length < maxItems ){
+          return false;
+      }
+      return true;
+  }
+
+  // Testing isFull function
+  console.log( `Basket currently has zero items, should return false:`, isFull(basket) );
+
+  // Testing a full basket
+  addItem( 'Dress' );
+  addItem( 'Skirt' );
+  addItem( 'Lipstick' );
+  addItem( 'Pickles' );
+  addItem( 'Wine' );
+
+  console.log (`Basket should have all five items:`, basket );
+  console.log ( `Testing isFull, should return true:`, isFull(basket) );
 
 // 3. Update the required `addItem` function to:
   // - Use the `isFull` function to prevent more than `maxItems` from being added to the basket. 
   // - If an item was added to the array, return `true`
   // - If there was no room and the item could not be added return `false`
+
+  
+
 
 // __Using Array built-in functions!__
 
