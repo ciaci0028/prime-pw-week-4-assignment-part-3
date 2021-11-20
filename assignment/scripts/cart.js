@@ -19,11 +19,23 @@ console.log (`Empty basket:`, basket) ;
  // Testing function by adding 'Socks' to the basket
  console.log( addItem( 'Socks' ) );
  console.log( basket );
- 
+
+ // Testing function by adding 'Pants' and 'Shirt' to the basket
+ addItem( 'Pants' );
+ addItem( 'Shirt' );
+ console.log ( basket );
 
 // - Create a function called `listItems`. It should:
  //  - loop over the items in the `basket` array
  //  - console.log each individual item on a new line
+ function listItems(array){
+     for ( item of array ){
+         console.log ( item );
+     }
+ }
+
+ // Testing listItems function on basket array
+listItems( basket );
 
 // - Create a function called `empty`. It should:
   // - reset the `basket` to an empty array

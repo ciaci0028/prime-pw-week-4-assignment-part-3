@@ -18,7 +18,6 @@ In this section we will write some functions that might be used in a simple cart
 Update the `cart.js` file to do the following:
 
 - Create a global variable named `basket` and set it to an empty array.
-// complete
 
 
 - Create a function called `addItem`. It should:
