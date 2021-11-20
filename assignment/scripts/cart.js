@@ -114,3 +114,15 @@ listItems( basket );
   // - Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) to find the index of the first matching item in the basket.
   // - Use [Array.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) to remove the first matching item from the basket.
   // - Return the item removed or `null` if the item was not found
+
+  function removeItem ( item, array ) {
+      if ( array.indexOf( item ) ) {
+          array.splice( 0, 1, item );
+          return item;
+      }
+      return null;
+  }
+
+  // Testing removeItem
+  console.log( `Removing 'Wine', expect 'null':`, removeItem ( 'Wine' ) );
+  console.log( `Removing 'Skirt', expect return to be 'Skirt':`, removeItem ( 'Skirt' ) );
