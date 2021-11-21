@@ -116,13 +116,16 @@ listItems( basket );
   // - Return the item removed or `null` if the item was not found
 
   function removeItem ( item, array ) {
-      if ( array.indexOf( item ) ) {
-          array.splice( 0, 1, item );
+          if ( array.indexOf( item ) >= 0 ) {
+          array.splice( array.indexOf( item ), 1 );
           return item;
       }
-      return null;
+    return null;
   }
 
   // Testing removeItem
-  console.log( `Removing 'Wine', expect 'null':`, removeItem ( 'Wine' ) );
-  console.log( `Removing 'Skirt', expect return to be 'Skirt':`, removeItem ( 'Skirt' ) );
+  console.log( `Removing 'Wine', expect 'null':`, removeItem ( 'Wine', basket ) );
+  console.log( `Removing 'Skirt', expect return to be 'Skirt':`, removeItem ( 'Skirt', basket ) );
+  console.log( `Removing another none existing item, expect null:`, removeItem ( 'Car', basket ) );
+  console.log( `Removing 'Towel', expect return to be 'Towel':`, removeItem ( 'Towel', basket) );
+  console.log( `Logging the basket, should expect items to be: Dress, Lipstick, Pickles:`, basket );
